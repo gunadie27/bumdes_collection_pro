@@ -12,12 +12,14 @@ import '../presentation/supervisor_monitoring_dashboard/supervisor_monitoring_da
 import '../presentation/detailed_reports_screen/detailed_reports_screen.dart';
 import '../presentation/agreement_tracking_screen/agreement_tracking_screen.dart';
 import '../presentation/data_export_analytics_hub/data_export_analytics_hub.dart';
+import '../presentation/home_screen/home_screen.dart';
 
 class AppRoutes {
   // TODO: Add your routes here
   static const String initial = '/';
   static const String splashScreen = '/splash-screen';
   static const String loginScreen = '/login-screen';
+  static const String homeScreen = '/home-screen';
   static const String supervisorMonitoringDashboard =
       '/supervisor-monitoring-dashboard';
   static const String overdueAccountsDashboard = '/overdue-accounts-dashboard';

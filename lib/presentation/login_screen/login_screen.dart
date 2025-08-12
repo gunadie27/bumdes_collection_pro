@@ -4,6 +4,7 @@ import 'package:sizer/sizer.dart';
 
 import '../../core/app_export.dart';
 import '../../theme/app_theme.dart';
+import '../../presentation/home_screen/home_screen.dart';
 import './widgets/bumdes_logo_widget.dart';
 import './widgets/error_message_widget.dart';
 import './widgets/login_form_widget.dart';
@@ -91,11 +92,17 @@ class _LoginScreenState extends State<LoginScreen> {
     // Successful login
     HapticFeedback.mediumImpact();
 
-    // Navigate based on role
-    final route = credentials['route'] as String;
+    // Navigate to HomeScreen with the user's role
+    final role = credentials['role'] as String;
+    final newRole = role == "collector" ? "kolektor" : "supervisor";
 
     if (mounted) {
-      Navigator.pushReplacementNamed(context, route);
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (context) => HomeScreen(userRole: newRole),
+        ),
+      );
     }
   }
 
